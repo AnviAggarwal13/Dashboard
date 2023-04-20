@@ -28,7 +28,7 @@ const RegistrationForm=()=> {
               <button className="signbtn">Sign in</button>
             </div>
             <div className="para">
-            <p>Don't have an account?<span id="register">Register here</span></p>
+            <p>Don't have an account?<span id="register"> Register here</span></p>
             </div>
            
         </div>

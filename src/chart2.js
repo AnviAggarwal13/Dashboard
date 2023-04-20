@@ -55,7 +55,7 @@ render() {
          ))}
       </Pie>
       <Tooltip content={<this.CustomTooltip />} />
-      <Legend layout="vertical" verticalAlign="top" wrapperStyle={{top:10, left:350}} />
+      <Legend layout="vertical" verticalAlign="top" wrapperStyle={{top:10, left:350, width: 120}} />
       </PieChart>
       );
    }
