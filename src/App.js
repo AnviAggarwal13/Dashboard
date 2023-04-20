@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Block from './block';
+import RegistrationForm from './signin';
+import Dash from './dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <div className="board">
+      <Block color="black"/>
+    </div>
+    <div className="signin">
+      <RegistrationForm />
+    </div>
+    <div>
+      <Dash />
+    </div>
     </div>
   );
 }
