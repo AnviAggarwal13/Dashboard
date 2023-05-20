@@ -1,21 +1,20 @@
 import './App.css';
-import Block from './block';
-import RegistrationForm from './signin';
-import Dash from './dashboard';
+import RegistrationForm from './pages/signin';
+import Dash from './pages/dashboard';
+import SignupForm from './pages/signup';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-    <div className="board">
-      <Block color="black"/>
-    </div>
-    <div className="signin">
-      <RegistrationForm />
-    </div>
-    <div>
-      <Dash />
-    </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/">
+      <Route index element={ <SignupForm />}></Route>
+      <Route path="login" element={<RegistrationForm />}></Route>
+      <Route path="home" element={<Dash />}></Route>
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 

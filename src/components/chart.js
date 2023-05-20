@@ -7,7 +7,7 @@ import {
     YAxis,
     CartesianGrid
 } from "recharts";
-import './style.css';
+import '../style.css';
 
 export default function Chart({ data }) {
   return (
