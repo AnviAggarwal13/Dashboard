@@ -1,10 +1,39 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import '../style.css';
+// import axios from "axios";
 import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {faApple} from '@fortawesome/free-solid-svg-icons';
+import { GoogleLogin, googleLogout } from '@react-oauth/google'
+
 
 const RegistrationForm=()=> {
+// const [user, setUser] = useState([]);
+// const [profile, setProfile] = useState([]);
+
+// const login = GoogleLogin({
+//   onSuccess : (codeResponse) => setUser(codeResponse),
+//   onError : (error) => alert('Login Failed', error)
+// });
+
+// useEffect(()=>{
+//   if(user){
+//     axios.get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+//       headers:{
+//         Authorization: `Bearer $(user.access_token)`,
+//         Accept: 'application/json'
+//       }
+//     })
+//     .then((res)=>{
+//       setProfile(res.data);
+//     })
+//     .catch((err)=>console.log(err));
+//   }
+// },[user]);
+
+// const logOut = () =>{
+//   googleLogout();
+//   setProfile(null);
+// };
+
     const style = {
         backgroundColor: "black",
         width: "40vw",
@@ -18,6 +47,16 @@ const RegistrationForm=()=> {
         FontFace: "Montserrat"
       };
 
+      const responseMsg = (response) =>{
+        console.log(response);
+        // user.push("/home");
+        // profile.push("/home");
+      }
+
+      const errorMsg = (error) =>{
+        console.log(error);
+      }
+
     return(
         <div className="page">
         <div style={style}>
@@ -28,7 +67,7 @@ const RegistrationForm=()=> {
         <p>Sign in to your account</p>
         
         <div className="btn">
-        <button className="google"><i className="fa-brands fa-google"></i>Sign in with google</button>
+          <GoogleLogin onSuccess={responseMsg} onError={errorMsg}></GoogleLogin>
         <button className="apple"><i className="fa-brands fa-apple" color="black"></i>Sign in with apple</button>
         </div>
        

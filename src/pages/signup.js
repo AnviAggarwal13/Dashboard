@@ -1,8 +1,17 @@
 import React from "react";
 import '../style.css';
 import { Link } from "react-router-dom";
-
+import { GoogleLogin } from "@react-oauth/google";
 const SignupForm=()=> {
+
+  const responseMsg = (response) =>{
+    console.log(response);
+  }
+
+  const errorMsg = (error) =>{
+    console.log(error);
+  }
+
     const style = {
         backgroundColor: "black",
         width: "40vw",
@@ -26,7 +35,7 @@ const SignupForm=()=> {
         <p>Create a new account</p>
         
         <div className="btn">
-        <button className="google"><i className="fa-brands fa-google"></i>Sign up with google</button>
+        <GoogleLogin onSuccess={responseMsg} onError={errorMsg}></GoogleLogin>
         <button className="apple"><i className="fa-brands fa-apple" color="black"></i>Sign up with apple</button>
         </div>
        
