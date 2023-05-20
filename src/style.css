@@ -393,3 +393,10 @@ label {
     position: absolute;
 }
 
+#header i{
+    cursor: pointer;
+}
+
+.board p{
+    cursor: pointer;
+}

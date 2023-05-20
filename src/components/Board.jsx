@@ -22,7 +22,7 @@ const Board = () => {
           <span id="head">Board.</span>
 
           <div className="option">
-            <p>
+            <p id="active">
               <i className="fa-solid fa-chart-pie"></i>Dashboard
             </p>
             <p>

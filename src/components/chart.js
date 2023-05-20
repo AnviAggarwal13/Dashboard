@@ -9,7 +9,19 @@ import {
 } from "recharts";
 import '../style.css';
 
-export default function Chart({ data }) {
+export default function Chart() {
+  const data = [
+    {name: '', uv: 0, amt: 0},
+    {name: 'Shirt', uv: 4000, amt: 2400},
+    {name: 'Pants', uv: 1500, amt: 2210},
+    {name: 'Caps', uv: 4500, amt: 2290},
+];
+const data2 = [
+    {a: 'Shirt', pv: 3500, amt: 2400},
+    {a: 'Pants', pv: 1398, amt: 2210},
+    {a: 'Caps', pv: 4000, amt: 2290},
+    {name: '', pv:1300, amt: 3400},
+];
   return (
     <div id="cont">
     <ResponsiveContainer width={1050} height={200}>
@@ -27,8 +39,8 @@ export default function Chart({ data }) {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Line dataKey="name" fill="#8884d8" fontSize="12px" />
-        <Line dataKey="priceUsd" fill="#82ca9d" />
+        <Line data={data} type="monotone" dataKey="uv" stroke="#ee8484"/>
+        <Line data = {data2} type="monotone" dataKey="pv" stroke="#82ca9d"/> 
       </LineChart>
     </ResponsiveContainer>
     </div>

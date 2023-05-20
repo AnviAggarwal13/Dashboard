@@ -4,16 +4,16 @@ class PieRechartComponent extends React.Component {
    COLORS = ["#98d89e", "#ee8484", "#f7dc7d"];
    pieData = [
       {
-         name: "Bitcoin",
+         name: "Shirts",
          value: 54.85
       },
       {
-         name: "Ethereum",
+         name: "Pants",
          value: 47.91
       },
      
       {
-         name: "Others",
+         name: "Caps",
          value: 28.25
       }
    ];
